@@ -7,6 +7,7 @@ const Header = () => {
             <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/cform'>Class Form</Link></li>
+                <li><Link to='/cform2'>Second Class Form</Link></li>
                 <li><Link to='/fform'>Functional Form</Link></li>
             </ul>
         </nav>
