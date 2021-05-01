@@ -2,20 +2,33 @@ import React, { Component } from 'react';
 
 class ClassForm extends Component {
     state = {
+        formData: {
             name : '',
             email: '',
             password: '',
             bio: ''
+        }
     };
     handleChange= e =>{
         this.setState({
-            [e.target.name] : e.target.value
+            formData: {
+                ...this.state.formData,
+                [e.target.name] : e.target.value
+            }
         })
     }
     handleSubmit= e =>{
         e.preventDefault();
 
-        console.log(this.state);
+        console.log(this.state.formData);
+        this.setState({
+            formData: {
+                name : '',
+                email: '',
+                password: '',
+                bio: ''
+            }
+        })
     }
 
     render() {
@@ -29,7 +42,7 @@ class ClassForm extends Component {
                         placeholder="Enter Your Name"
                         name="name" id="name" 
                         onChange={this.handleChange} 
-                        value={this.state.name}
+                        value={this.state.formData.name}
                     />
                 </div>
                 <div className="form-group">
@@ -39,7 +52,7 @@ class ClassForm extends Component {
                         className="form-control" 
                         placeholder="Enter Your Email"
                         name="email" id="email" 
-                        value={this.state.email} 
+                        value={this.state.formData.email} 
                         onChange={this.handleChange}
                     />
                 </div>
@@ -50,7 +63,7 @@ class ClassForm extends Component {
                         className="form-control" 
                         placeholder="Enter valid password"
                         name="password" id="password" 
-                        value={this.state.password} 
+                        value={this.state.formData.password} 
                         onChange={this.handleChange}
                     />
                 </div>
@@ -61,7 +74,7 @@ class ClassForm extends Component {
                         className="form-control" 
                         placeholder="what's on your mind"
                         name="bio" id="bio" 
-                        value={this.state.bio} 
+                        value={this.state.formData.bio} 
                         onChange={this.handleChange}
                     />
                 </div>

@@ -17,6 +17,12 @@ const FunctionForm = () => {
         e.preventDefault();
 
         console.log(formData);
+        setFormData({
+            name : '',
+            email: '',
+            password: '',
+            bio: ''
+        })
     };
     return (
         <div>
